@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  doh-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    image: doh-server
+    ports:
+      - 8053:8053
+    networks:
+      main:
+       aliases:
+         - doh-server
+
+networks:
+  main:
